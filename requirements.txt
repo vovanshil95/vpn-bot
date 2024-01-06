@@ -1,0 +1,5 @@
+aiogram==3.3.0
+python-dotenv==1.0.0
+fastapi==0.108.0
+uvicorn==0.25.0
+ua-parser==0.18.0
