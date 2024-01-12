@@ -18,7 +18,7 @@ async def command_start_handler(message: Message) -> None:
     connect_button = InlineKeyboardButton(text="Подключить vpn",
                                           url=f'https://{SERVICE_HOST}/config/{message.chat.id}')
     inline_kb = InlineKeyboardMarkup(inline_keyboard=[[download_button],[connect_button]])
-    await message.answer("Click the button below to download the app.", reply_markup=inline_kb)
+    await message.answer("Привет! Для начала работы с нашим VPN, пожалуйста, выполните следующие шаги:\n\n1. Нажмите на верхнюю кнопку, чтобы скачать приложение.\n2. После установки приложения, нажмите на вторую кнопку, чтобы подключиться", reply_markup=inline_kb)
 
 async def main() -> None:
     bot = Bot(API_TOKEN, parse_mode=ParseMode.HTML)
