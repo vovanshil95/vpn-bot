@@ -9,7 +9,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse, Response
 from ua_parser import user_agent_parser
 
-from config import SERVICE_HOST, USERNAME, PASSWORD, VPN_PORT, TRIAL_PERIOD, VPN_MANAGER_PORT, VPN_PUBLIC_KEY, SERVICE_PORT
+from config import SERVICE_HOST, USERNAME, PASSWORD, VPN_PORT, TRIAL_PERIOD, VPN_MANAGER_PORT, VPN_PUBLIC_KEY
 
 app = FastAPI()
 
@@ -28,9 +28,9 @@ async def get_app(request: Request, chat_id: int):
 
     if 'Apple' in device_brand:
 
-        return f'streisand://import/http://{SERVICE_HOST}:{SERVICE_PORT}/download/{chat_id} #fast vpn'
+        return f'streisand://import/https://{SERVICE_HOST}/download/{chat_id} #fast vpn'
     else:
-        return f'v2rayng://install-config?url=http://{SERVICE_HOST}:{SERVICE_PORT}/download/{chat_id}'
+        return f'v2rayng://install-config?url=https://{SERVICE_HOST}/download/{chat_id}'
 
 @app.get('/download/{chat_id}')
 async def download_config(chat_id: int):
