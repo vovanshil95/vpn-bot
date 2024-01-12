@@ -16,7 +16,7 @@ async def command_start_handler(message: Message) -> None:
     download_button = InlineKeyboardButton(text="Скачать приложение",
                                            url=f'https://{SERVICE_HOST}/app')
     connect_button = InlineKeyboardButton(text="Подключить vpn",
-                                          url=f'https://{SERVICE_HOST}/{message.chat.id}')
+                                          url=f'https://{SERVICE_HOST}/config/{message.chat.id}')
     inline_kb = InlineKeyboardMarkup(inline_keyboard=[[download_button],[connect_button]])
     await message.answer("Click the button below to download the app.", reply_markup=inline_kb)
 
