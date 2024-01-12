@@ -59,6 +59,6 @@ async def download_config(chat_id: str):
                       "settings": f"{{\"clients\": [{{\n  \"id\": \"{user_id}\",\n  \"flow\": \"xtls-rprx-vision\",\n  \"email\": \"{chat_id}\",\n  \"limitIp\": 0,\n  \"totalGB\": 0,\n  \"expiryTime\": {-24 * 3600 * 1000 * TRIAL_PERIOD},\n  \"enable\": true,\n  \"tgId\": \"\",\n  \"subId\": \"{sub_id}\",\n  \"reset\": 0\n}}]}}"
                   })
 
-    config = f'vless://{user_id}@{SERVICE_HOST}:{VPN_PORT}?type=tcp&security=reality&pbk={VPN_PUBLIC_KEY}&fp=firefox&sni=google.com&sid=47edc4d9&spx=%2F&flow=xtls-rprx-vision#{chat_id}'
+    config = f'vless://{user_id}@{SERVICE_HOST}:{VPN_PORT}?type=tcp&security=reality&pbk={VPN_PUBLIC_KEY}&fp=firefox&sni=google.com&sid=47c59583&spx=%2F&flow=xtls-rprx-vision#{chat_id}'
 
     return Response(base64.b64encode(config.encode('utf-8')))
