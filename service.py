@@ -33,7 +33,8 @@ async def get_app(request: Request, chat_id: int):
         return f'v2rayng://install-config?url=https://{SERVICE_HOST}/download/{chat_id}'
 
 @app.get('/download/{chat_id}')
-async def download_config(chat_id: int):
+async def download_config(chat_id: str):
+    chat_id = int(chat_id[:-1])
 
     # if chat_id is not in ids:
     #     return 403
