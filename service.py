@@ -42,7 +42,7 @@ async def download_config(chat_id: str):
     creds = {"username": USERNAME,
              "password": PASSWORD}
 
-    login_resp = requests.post(f'http://{SERVICE_HOST}:{VPN_MANAGER_PORT}/login',
+    login_resp = requests.post(f'http://localhost:{VPN_MANAGER_PORT}/login',
                          headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0'},
                          json=creds)
 
@@ -52,7 +52,7 @@ async def download_config(chat_id: str):
     user_id = str(uuid.uuid4())
     sub_id = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(16))
 
-    requests.post(f'http://{SERVICE_HOST}:{VPN_MANAGER_PORT}/panel/inbound/addClient',
+    requests.post(f'http://localhost:{VPN_MANAGER_PORT}/panel/inbound/addClient',
                   cookies=cookies,
                   json={
                       "id": 1,
